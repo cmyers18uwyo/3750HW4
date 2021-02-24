@@ -1,0 +1,16 @@
+Lab03 Theory.
+	  1			if n <= 2
+T(n) {
+	  3T(n/3)+n	if n > 2
+	Its 1 for n <=2 because then we dont use recussion at all.
+	It is 3T(n/3)+n for greater then 2 because we are recussivly splitting the array into 3rds 3 times.
+	plus n because we then add.
+
+T(n) = 3T(n/3)+n
+=3(3T((n/3)/3)+n/3)+n
+=9T(n/9)+2n
+=18T(n/18)+3n
+...
+=3^i T(n/3^i)+in
+
+=O(nlog3 n)
