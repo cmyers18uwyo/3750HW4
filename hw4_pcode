@@ -1,0 +1,23 @@
+/*
+* hw4 pcode.txt
+* Author: Charles Myers
+* Date: Feb 23, 2020
+*
+* COSC 3750, Homework 4
+*
+* Pseudocode for the wycat file
+*
+*/
+
+
+Treat the arguments as file names, but if there are no arguments read from standard input.
+If there are arguments access those files.
+	Loop and check all of the files
+		If files cant be accessed return an error
+			remove the file from the array
+		otherwise 
+			read a line from the file then display it
+Otherwise
+	allow the user to input data, then output that data back to the user
+	If the user does CTRL-D end
+	
