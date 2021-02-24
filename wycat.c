@@ -15,6 +15,7 @@ int main(int argc, char* argv[]) {
 //Declare vars for our file and buffer
 FILE *infile;
 char buffer[4096];
+int size;
 //Check to see if we have any arguments
 	if(argc > 1) {
 		//iterate through our arguments
@@ -22,8 +23,8 @@ char buffer[4096];
 			//If an argument is - then copy the users standard input
 			//to standard output
 			if(strcmp(argv[i], "-") == 0) {
-				while(fread(buffer, sizeof(char), 64, stdin) == 64) {
-						fwrite(buffer,sizeof(char), 64, stdout);
+				while(fread(buffer, sizeof(char), 4, stdin) == 4) {
+						fwrite(buffer,sizeof(char), 4, stdout);
 					}
 			}
 			else {
@@ -35,8 +36,8 @@ char buffer[4096];
 				}
 				else {
 					//Read the data from the file then copy it to standard output
-					while(fread(buffer, sizeof(char), 64, infile) == 64) {
-						fwrite(buffer,sizeof(char), 64, stdout);
+					while(fread(buffer, sizeof(char), 4, infile) == 4) {
+						fwrite(buffer,sizeof(char), 4, stdout);
 					}
 					fclose(infile);
 				}
@@ -46,8 +47,8 @@ char buffer[4096];
 	
 	}
 	else {
-		while(fread(buffer, sizeof(char), 64, stdin) == 64) {
-			fwrite(buffer,sizeof(char), 64, stdout);
+		while(fread(buffer, sizeof(char), 4, stdin) == 4) {
+			fwrite(buffer,sizeof(char), 4, stdout);
 		}
 		
 	}
