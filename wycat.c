@@ -20,6 +20,7 @@ int size;
 	if(argc > 1) {
 		//iterate through our arguments
 		for(int i = 1; argv[i] != NULL; i++) {
+			clearerr(stdin);
 			//If an argument is - then copy the users standard input
 			//to standard output
 			if(strcmp(argv[i], "-") == 0) {
@@ -36,8 +37,8 @@ int size;
 				}
 				else {
 					//Read the data from the file then copy it to standard output
-					while(fread(buffer, sizeof(char), 4, infile) == 4) {
-						fwrite(buffer,sizeof(char), 4, stdout);
+					while(fread(buffer, sizeof(char), 1, infile) == 1) {
+						fwrite(buffer,sizeof(char), 1, stdout);
 					}
 					fclose(infile);
 				}
@@ -47,8 +48,8 @@ int size;
 	
 	}
 	else {
-		while(fread(buffer, sizeof(char), 4, stdin) == 4) {
-			fwrite(buffer,sizeof(char), 4, stdout);
+		while(fread(buffer, sizeof(char), 1, stdin) == 1) {
+			fwrite(buffer,sizeof(char), 1, stdout);
 		}
 		
 	}
